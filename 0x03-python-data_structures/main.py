@@ -1,7 +1,10 @@
-def add_tuple(my_string):
-    i=0
-    for c in my_string:
-        if c=='c' or c=='C':
-            my_string.pop(i)
-        i+=1
-    return my_string
+#!/usr/bin/python3
+""" def print_matrix_integer(matrix=[[]]):
+    for i in len(matrix):
+        for j in len(matrix[i]):
+            print(matrix[i][j]) """
+def print_matrix_integer(matrix = [[]]):
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            print('{}'.format(matrix[i][j]),end=' ')
+        print(' ')
