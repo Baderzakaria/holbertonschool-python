@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""Square Class
-
-This class don't do anything for the moment
-
+"""
+    0-square.py
+    Module defining square
+    return {}
 """
 
 
 class Square:
+    """Square class
+       This will define a square and will return an empty block
+    """
     pass

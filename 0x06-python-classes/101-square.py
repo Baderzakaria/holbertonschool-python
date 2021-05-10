@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-    4-square.py
-    The module defines square
+    This module defines linked lists
     return {}
 """
 
@@ -10,7 +9,7 @@ class Square():
     """square class"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialization class"""
+        """Class Initialization"""
         self.size = size
         self.position = position
 
@@ -33,16 +32,16 @@ class Square():
         self.__size = value
 
     def my_print(self):
-        """Printing the square using stdout the square with the char #"""
+        """Printing the square with the char #"""
         if self.__size == 0:
             print()
             return
         for row in range(self.__position[1]):
-            print()
-        for x in range(self.__size):
+            print("")
+        for i in range(self.__size):
             for space in range(self.__position[0]):
                 print(" ", end="")
-            for i in range(self.__size):
+            for j in range(self.__size):
                 print("#", end="")
             print()
 
@@ -53,11 +52,23 @@ class Square():
 
     @position.setter
     def position(self, value):
-        """Setting the position of the square"""
+        """Setting the position of Square"""
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if any(not isinstance(num, int) for num in value):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if any(num < 0 for num in value):
+        if any(isinstance(value, int) and num < 0 for num in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
+
+    def __repr__(self):
+        string = ""
+        if self.__size == 0:
+            return ""
+        for row in range(self.__position[1]):
+            string += "\n"
+        for x in range(self.__size):
+            for space in range(self.__position[0]):
+                string += " "
+            for i in range(self.__size):
+                string += "#"
+            string += "\n"
+        return string[:-1]
