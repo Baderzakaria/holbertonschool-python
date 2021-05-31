@@ -10,3 +10,4 @@ def read_file(filename=""):
     with open(filename, 'r') as f:
         for x in f:
             print(x, end='')
+read_file("1-number_of_lines.py")

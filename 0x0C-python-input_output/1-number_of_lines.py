@@ -9,3 +9,4 @@ def number_of_lines(filename=""):
     """Returns  number of lines in a text file"""
     with open(filename, 'r') as f:
         return(len(list(f)))
+number_of_lines("0-read_file.py")
