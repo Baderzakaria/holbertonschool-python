@@ -16,14 +16,7 @@ class TestBaseClass(unittest.TestCase):
 
     def setUp(self):
         Base._Base__nb_objects = 0
-    def test_pep8_conformance(self):
-        """Test that we conform to PEP8."""
-        pep8style = pep8.StyleGuide(quiet=True)
-        mode_base = pep8style.check_files(['models/base.py',
-                                           'models/rectangle.py',
-                                           ])
-        self.assertEqual(mode_base.total_errors, 0,
-                         "Found code style errors (models_base).")
+
     def test_0_id_None(self):
         '''Test for id with None argument passed'''
         b1 = Base(None)
@@ -74,44 +67,5 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(b1.id, 22)
         b2 = Base(22)
         self.assertEqual(b2.id, 22)
-    def test_7_id_sameId(self):
-        '''Test for same ids and number'''
-        b1 = Base(22)
-        self.assertEqual(b1.id, b1.id)
-        b2 = Base(22)
-        self.assertEqual(b2.id, b1.id)
-    def test_8_id_sameId(self):
-        '''Test for same ids and number'''
-        b1 = Base(22)
-        self.assertEqual(b1.id, b1.id)
-        b2 = Base(22)
-        self.assertEqual(b2.id, b2.id)
-    def test_9_id_sameId(self):
-        '''Test for same ids and number'''
-        b1 = Base(22)
-        b2 = Base(22)
-        self.assertEqual(b1.id, b2.id)
-        self.assertEqual(b2.id, b1.id)
-    def test_10_id_sameId(self):
-        '''Test for same ids and number'''
-        b1 = Base(1)
-        b2 = Base(1)
-        self.assertEqual(b2.id, b2.id)
-        self.assertEqual(b1.id, b1.id)
-    def test_11_id_sameId(self):
-        '''Test for same ids and number'''
-        b1 = Base('b')
-        b2 = Base('a')
-        self.assertEqual(b2.id, b2.id)
-        self.assertEqual(b1.id, b1.id)
-    def test_12_id_sameId(self):
-        '''Test for same ids and number'''
-        b1 = Base('a')
-        b2 = Base('a')
-        self.assertEqual(b2.id, b2.id)
-        self.assertEqual(b1.id, b1.id)
-
-
-
 if __name__ == '__main__':
     unittest.main()
