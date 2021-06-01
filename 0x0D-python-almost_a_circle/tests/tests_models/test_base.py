@@ -67,6 +67,43 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(b1.id, 22)
         b2 = Base(22)
         self.assertEqual(b2.id, 22)
+    def test_7_id_sameId(self):
+        '''Test for same ids and number'''
+        b1 = Base(22)
+        self.assertEqual(b1.id, b1.id)
+        b2 = Base(22)
+        self.assertEqual(b2.id, b1.id)
+    def test_8_id_sameId(self):
+        '''Test for same ids and number'''
+        b1 = Base(22)
+        self.assertEqual(b1.id, b1.id)
+        b2 = Base(22)
+        self.assertEqual(b2.id, b2.id)
+    def test_9_id_sameId(self):
+        '''Test for same ids and number'''
+        b1 = Base(22)
+        b2 = Base(22)
+        self.assertEqual(b1.id, b2.id)
+        self.assertEqual(b2.id, b1.id)
+    def test_10_id_sameId(self):
+        '''Test for same ids and number'''
+        b1 = Base(1)
+        b2 = Base(1)
+        self.assertEqual(b2.id, b2.id)
+        self.assertEqual(b1.id, b1.id)
+    def test_11_id_sameId(self):
+        '''Test for same ids and number'''
+        b1 = Base('b')
+        b2 = Base('a')
+        self.assertEqual(b2.id, b2.id)
+        self.assertEqual(b1.id, b1.id)
+    def test_12_id_sameId(self):
+        '''Test for same ids and number'''
+        b1 = Base('a')
+        b2 = Base('a')
+        self.assertEqual(b2.id, b2.id)
+        self.assertEqual(b1.id, b1.id)
+
 
 
 if __name__ == '__main__':
