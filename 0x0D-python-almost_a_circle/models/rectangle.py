@@ -4,11 +4,11 @@
 Rectangle Module
 """
 
-from models.base import base
+from models.base import Base
 import json
 
 
-class Rectangle(base):
+class Rectangle(Base):
     """Rectangle Class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
