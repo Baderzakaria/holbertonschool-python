@@ -16,7 +16,14 @@ class TestBaseClass(unittest.TestCase):
 
     def setUp(self):
         Base._Base__nb_objects = 0
-
+    def test_pep8_conformance(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        mode_base = pep8style.check_files(['models/base.py',
+                                           'models/rectangle.py',
+                                           ])
+        self.assertEqual(mode_base.total_errors, 0,
+                         "Found code style errors (models_base).")
     def test_0_id_None(self):
         '''Test for id with None argument passed'''
         b1 = Base(None)
