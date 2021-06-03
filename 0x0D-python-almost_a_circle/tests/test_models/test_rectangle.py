@@ -38,7 +38,6 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(10, 2)
         r2 = Rectangle(2, 10)
         r3 = Rectangle(10, 2, 0, 0, 12)
-
         self.assertEqual(r1.id, 4)
         self.assertEqual(r1.width, 10)
         self.assertEqual(r1.height, 2)
@@ -134,3 +133,16 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(5, 9, 5, -4798576398576)
             raise ValueError()
+        with self.assertRaises(ValueError):
+            Rectangle(-4798576398576)
+            raise ValueError()
+        with self.assertRaises(ValueError):
+            Rectangle(5)
+            raise ValueError()
+        with self.assertRaises(ValueError):
+            Rectangle(-4798576398576, -4798576398576)
+            raise ValueError()
+        with self.assertRaises(ValueError):
+            Rectangle(0,0)
+            raise ValueError()
+
